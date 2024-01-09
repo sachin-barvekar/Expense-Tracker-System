@@ -11,7 +11,7 @@
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-success">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#"><i class="fa-solid fa-money-check-dollar"></i> Expense Tracker</a>
+    <a class="navbar-brand" href="index.jsp"><i class="fa-solid fa-money-check-dollar"></i> Expense Tracker</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -37,6 +37,26 @@
     </div>
   </div>
 </nav>
+
+<div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="img/ep1.jpg" class="d-block w-100" alt="..." height="650px">
+    </div>
+    <div class="carousel-item">
+      <img src="img/ep2.jpg" class="d-block w-100" alt="..." height="650px">
+    </div>
+    <div class="carousel-item">
+      <img src="img/ep3.jpg" class="d-block w-100" alt="..." height="650px">
+    </div>
+    <div class="carousel-item">
+      <img src="img/ep4.jpg" class="d-block w-100" alt="..." height="650px">
+    </div>
+    <div class="carousel-item">
+      <img src="img/ep5.jpg" class="d-block w-100" alt="..." height="650px">
+    </div>
+  </div>
+</div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
