@@ -9,7 +9,7 @@ public class DBConnection {
 		String driver = "com.mysql.cj.jdbc.Driver";
 		String url = "jdbc:mysql://localhost:3306/expense_tracker";
 		String user = "root";
-		String pass = "?";
+		String pass = "Sachin7588@*";
 		Class.forName(driver);
 		Connection connection = DriverManager.getConnection(url, user, pass);
 		return connection;

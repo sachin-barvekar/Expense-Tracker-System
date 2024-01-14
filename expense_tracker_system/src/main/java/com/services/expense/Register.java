@@ -27,14 +27,8 @@ public class Register implements register{
 
 		userDatabase.put(useremail, password);
 
-
-
 		try {
 			saveToDatabase(useremail, username, password);
-			if (userDatabase.containsKey(useremail)) {
-				System.out.println("User already exists for these mail. Please choose another one.");
-				return;
-			}
 			System.out.println("Sign up successful! You can now log in with your new credentials.");
 			System.out.println("***************************************");
 		} catch (ClassNotFoundException | SQLException e) {

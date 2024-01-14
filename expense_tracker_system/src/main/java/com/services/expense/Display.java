@@ -39,8 +39,6 @@ public class Display implements display {
 		} finally {
 			// Close resources in a finally block
 			if (resultSet != null) {
-				System.out.println("No data found!! Firstly Add Expense.");
-				System.out.println("***************************************");
 				resultSet.close();
 			}
 			if (statement != null) {

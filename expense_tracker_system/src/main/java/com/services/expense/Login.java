@@ -6,12 +6,12 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Scanner;
 
-import com.DBconnection.demo.DBConnection;
+import com.DBConnection.expense.*;
 import com.todo.expense.*;
 
 public class Login implements login {
 	// Assuming you have the user ID from somewhere, e.g., after login
-	int userId;  // Replace with the actual user ID
+	static int userId;  // Replace with the actual user ID
 
 	public void login() throws ClassNotFoundException, SQLException {
 		Scanner scanner = new Scanner(System.in);
