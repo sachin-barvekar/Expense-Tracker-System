@@ -19,8 +19,7 @@ public class Display implements display {
 			statement = DBConnection.getConnection().prepareStatement(selectString);
 			statement.setInt(1, userId);
 			resultSet = statement.executeQuery();
-
-
+			
 			// Display the data:
 			while (resultSet.next()) {
 				int userId1 = resultSet.getInt("userId");

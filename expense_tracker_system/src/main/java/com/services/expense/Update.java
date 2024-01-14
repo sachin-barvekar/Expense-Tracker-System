@@ -20,20 +20,20 @@ public class Update implements update {
 
 			Scanner sc = new Scanner(System.in);
 
-			System.out.println("Enter new Expense Category:");
-			String category = sc.next();
+			System.out.println("Enter Expense Category:");
+			String category = sc.nextLine();
 
-			System.out.println("Enter new Expense Description: ");
-			String description = sc.next();
+			System.out.println("Enter Expense Description: ");
+			String description = sc.nextLine();
+			
+			System.out.println("Enter Payment Method: ");
+			String payment_method = sc.nextLine();
 
-			System.out.println("Enter new Amount: ");
+			System.out.println("Enter Amount: ");
 			int amount = sc.nextInt();
 
-			System.out.println("Enter new Date (YYYY-MM-DD): ");
+			System.out.println("Enter Date (YYYY-MM-DD): ");
 			String date = sc.next();
-
-			System.out.println("Enter new Payment Method: ");
-			String payment_method = sc.next();
 
 			statement.setString(1, category);
 			statement.setString(2, description);
@@ -55,7 +55,6 @@ public class Update implements update {
 			System.out.println("***************************************");
 		}
 	}
-
 	private boolean isExpenseIdExists(int expenseId) throws SQLException, ClassNotFoundException {
 		try (PreparedStatement selectStatement = DBConnection.getConnection().prepareStatement(selectExpenseString)) {
 			selectStatement.setInt(1, expenseId);

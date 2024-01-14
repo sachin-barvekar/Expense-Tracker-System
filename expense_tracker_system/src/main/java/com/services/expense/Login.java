@@ -63,7 +63,7 @@ public class Login implements login {
 							System.out.println("Enter Expense ID to delete:");
 							int expenseId = scanner.nextInt();
 							delete d2 = new Delete();
-							d2.delete(expenseId);
+							d2.delete(expenseId, userId);
 							break;
 						case 4:
 							System.out.println("**********You have choose Display Expense option**********");
@@ -84,7 +84,6 @@ public class Login implements login {
 					System.out.println("Invalid username or password. Please try again.");
 				}
 			}
-
 		} catch (SQLException | ClassNotFoundException e) {
 			e.printStackTrace();
 			System.out.println("Error connecting to the database.");
