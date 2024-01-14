@@ -19,8 +19,10 @@ public class Delete implements delete {
 
 		if (rowsAffected > 0) {
 			System.out.println("Expense deleted successfully");
+			System.out.println("***************************************");
 		} else {
 			System.out.println("Expense not found or deletion failed");
+			System.out.println("***************************************");
 		}
 	}
 }

@@ -15,27 +15,28 @@ public class Register implements register{
 
 	public void register() throws ClassNotFoundException, SQLException{
 		Scanner scanner = new Scanner(System.in);
+		System.out.println("Enter User Name:");
+		String username = scanner.nextLine();
+
 		System.out.println("Enter Email:");
 		String useremail = scanner.next();
 
-		if (userDatabase.containsKey(useremail)) {
-			System.out.println("User already exists for these mail. Please choose another one.");
-			return;
-		}
-
-		System.out.println("Enter User Name:");
-		String username = scanner.next();
 
 		System.out.println("Enter password:");
 		String password = scanner.next();
 
-		userDatabase.put(useremail,password);
+		userDatabase.put(useremail, password);
 
 
 
 		try {
 			saveToDatabase(useremail, username, password);
+			if (userDatabase.containsKey(useremail)) {
+				System.out.println("User already exists for these mail. Please choose another one.");
+				return;
+			}
 			System.out.println("Sign up successful! You can now log in with your new credentials.");
+			System.out.println("***************************************");
 		} catch (ClassNotFoundException | SQLException e) {
 			e.printStackTrace();
 			System.out.println("Error connecting to the database or saving to the database.");
@@ -48,7 +49,7 @@ public class Register implements register{
 				PreparedStatement preparedStatement = connection.prepareStatement(query)) {
 
 			preparedStatement.setString(1, useremail);
-			preparedStatement.setString(2, username);            
+			preparedStatement.setString(2, username);    
 			preparedStatement.setString(3, password);
 
 			preparedStatement.executeUpdate();

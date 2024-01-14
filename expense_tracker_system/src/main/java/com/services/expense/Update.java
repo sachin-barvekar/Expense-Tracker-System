@@ -45,11 +45,14 @@ public class Update implements update {
 
 			if (rowsAffected > 0) {
 				System.out.println("Expense updated successfully");
+				System.out.println("***************************************");
 			} else {
 				System.out.println("Expense not found or update failed");
+				System.out.println("***************************************");
 			}
 		} else {
 			System.out.println("Expense ID does not exist. Update aborted.");
+			System.out.println("***************************************");
 		}
 	}
 

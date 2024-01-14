@@ -17,19 +17,19 @@ public class Create implements insert {
 		Scanner sc = new Scanner(System.in);
 
 		System.out.println("Enter Expense Category:");
-		String category = sc.next();
+		String category = sc.nextLine();
 
 		System.out.println("Enter Expense Description: ");
-		String description = sc.next();
+		String description = sc.nextLine();
+		
+		System.out.println("Enter Payment Method: ");
+		String payment_method = sc.nextLine();
 
 		System.out.println("Enter Amount: ");
 		int amount = sc.nextInt();
 
 		System.out.println("Enter Date (YYYY-MM-DD): ");
 		String date = sc.next();
-
-		System.out.println("Enter Payment Method: ");
-		String payment_method = sc.next();
 
 		statement.setString(1, category);
 		statement.setString(2, description);
@@ -39,5 +39,6 @@ public class Create implements insert {
 		statement.setInt(6, userId); // Set the user ID obtained from the parameter
 		statement.executeUpdate();
 		System.out.println("Expense added successfully");
+		System.out.println("***************************************");
 	}
 }

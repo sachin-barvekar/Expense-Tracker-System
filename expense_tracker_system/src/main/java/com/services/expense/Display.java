@@ -21,7 +21,7 @@ public class Display implements display {
 			resultSet = statement.executeQuery();
 
 
-			// Display the data
+			// Display the data:
 			while (resultSet.next()) {
 				int userId1 = resultSet.getInt("userId");
 				int expneseId = resultSet.getInt("expense_Id");
@@ -32,12 +32,15 @@ public class Display implements display {
 				String payement_method = resultSet.getString("payment_method");
 				Timestamp time = resultSet.getTimestamp("created_at");
 				// Display the header
-				System.out.println("User ID: "+userId1+"\n"+"expneseId: "+expneseId+"\n"+"category: "+category+"\n"+"description: "+description+"\n"+"amount: "+amount+"\n"+"date: "+date + "\n"+"payement_method: "+payement_method +"\n" +"created_at: " +time+"\n");
-
+				System.out.println("The expenses for the user id: "+userId1);
+				System.out.println("Expnese Id: "+expneseId+"\n"+"Category of Expense: "+category+"\n"+"Description of Expense: "+description+"\n"+"Amount of Expense: "+amount+"\n"+"Date of Expense: "+date + "\n"+"Payement Method of Expense: "+payement_method +"\n" +"Expense Created at: " +time+"\n");
+				System.out.println("***************************************");
 			}
 		} finally {
 			// Close resources in a finally block
 			if (resultSet != null) {
+				System.out.println("No data found!! Firstly Add Expense.");
+				System.out.println("***************************************");
 				resultSet.close();
 			}
 			if (statement != null) {

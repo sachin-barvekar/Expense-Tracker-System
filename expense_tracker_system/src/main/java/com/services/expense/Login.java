@@ -34,9 +34,9 @@ public class Login implements login {
 			try (ResultSet resultSet = preparedStatement.executeQuery()) {
 				if (resultSet.next()) {
 					userId = resultSet.getInt("userId");
-					System.out.println("Login successful!");
+					System.out.println("Login successful! Now, You can use Services!");
 					while (!exit) {
-						System.out.println("Enter Your choice");
+						System.out.println("Enter Your Choice: ");
 						System.out.println("1. Add Expense");
 						System.out.println("2. Update Expense");
 						System.out.println("3. Delete Expense");
@@ -47,31 +47,37 @@ public class Login implements login {
 						switch (x) {
 						case 1:
 							// Pass the userId to the Create class
+							System.out.println("**********You have choose Add Expense option**********");
 							insert c1 = new Create();
 							c1.add(userId);
 							break;
 						case 2:
+							System.out.println("**********You have choose Update Expense option**********");
 							update u1 = new Update();
 							System.out.println("Enter Expense ID to update:");
 							int expenseIdToUpdate = scanner.nextInt();
 							u1.update(expenseIdToUpdate);
 							break;
 						case 3:
+							System.out.println("**********You have choose Delete Expense option**********");
 							System.out.println("Enter Expense ID to delete:");
 							int expenseId = scanner.nextInt();
 							delete d2 = new Delete();
 							d2.delete(expenseId);
 							break;
 						case 4:
+							System.out.println("**********You have choose Display Expense option**********");
 							display d1 = new Display();
 							d1.display(userId);
 							break;
 						case 5:
 							exit = true;
 							System.out.println("Log out from system successful. Goodbye!");
+							System.out.println("***************************************");
 							break;
 						default:
 							System.out.println("Invalid option. Please try again.");
+							System.out.println("***************************************");
 						}
 					}
 				} else {
